@@ -78,6 +78,6 @@
   - name: Create symlink
     file:
       src: /var/lib/snapd/snap
-      dst: /snap
+      dest: /snap
       state: link
     become: yes
