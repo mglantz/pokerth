@@ -58,16 +58,14 @@
   vars_files:
     - vars/vars.yml
   tasks:
+  - name: Clear DNF cache
+    command: dnf clear all
+  
   - name: Install SNAP
     yum:
       name: snapd
       state: present
     become: yes
-    
-  - name: Stopped firewalld
-    service:
-      name: firewalld
-      state: stopped
     
   - name: Snap install
     snap: 
