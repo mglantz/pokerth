@@ -59,7 +59,7 @@
     - vars/vars.yml
   tasks:
   - name: Clear DNF cache
-    command: dnf clear all
+    command: dnf clean all
     become: yes
   
   - name: Install SNAP
