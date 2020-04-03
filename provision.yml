@@ -52,7 +52,12 @@
   - name: Add Poker TH instance public IPs to host group
     add_host: hostname={{ item.public_ip }} groups=pokerth
     with_items: "{{ pokerth.tagged_instances }}"
-    
+
+- hosts: pokerth
+  gather_facts: False
+  vars_files:
+    - vars/vars.yml
+
   - name: Install SNAP
     yum:
       name: snapd
