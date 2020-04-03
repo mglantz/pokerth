@@ -71,6 +71,11 @@
       state: link
     become: yes
     
+  - name: Stopped firewalld
+    service:
+      name: firewalld
+      state: stopped
+    
   - name: Snap install
     snap: 
       name: pokerth
