@@ -57,12 +57,14 @@
     yum:
       name: snapd
       state: present
+    become: yes
             
   - name: Create symlink
     command: ln -s /var/lib/snapd/snap /snap
+    become: yes
     
   - name: Snap install
     snap: 
       name: pokerth
       state: present
-
+    become: yes
