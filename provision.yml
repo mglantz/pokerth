@@ -57,7 +57,7 @@
   gather_facts: False
   vars_files:
     - vars/vars.yml
-
+  tasks:
   - name: Install SNAP
     yum:
       name: snapd
