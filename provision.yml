@@ -61,7 +61,12 @@
   - name: Clear DNF cache
     command: dnf clean all
     become: yes
-  
+ 
+  - name: Install kernel debug
+    yum:
+      name: kernel-debug
+      state: present
+ 
   - name: Install SNAP
     yum:
       name: snapd
