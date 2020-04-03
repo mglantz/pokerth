@@ -60,7 +60,10 @@
     become: yes
             
   - name: Create symlink
-    command: ln -s /var/lib/snapd/snap /snap
+    file:
+      src: /var/lib/snapd/snap
+      dst: /snap
+      state: link
     become: yes
     
   - name: Snap install
