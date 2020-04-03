@@ -70,6 +70,23 @@
     
   - name: Snap install
     snap: 
+      name: snapcraft
+      state: present
+      classic: yes
+    become: yes
+    
+  - name: Install multipass
+    snap:
+      name: multipass
+      state: present
+      classic: yes
+    become: yes
+  
+  - name: Start snapcraft
+    command: nohup snapcraft </dev/null >/dev/null 2>&1 &
+  
+  - name: Snap install pokerth
+    snap: 
       name: pokerth
       state: present
     become: yes
@@ -80,3 +97,6 @@
       dest: /snap
       state: link
     become: yes
+    
+  - name: Start pokerth
+    command: nohup pokerth </dev/null >/dev/null 2>&1 &
