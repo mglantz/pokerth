@@ -4,13 +4,6 @@
   vars_files:
     - vars/vars.yml
   tasks:
-  - name: Download Poker TH User data
-    get_url:
-      url: https://raw.githubusercontent.com/mglantz/ansible-roadshow/master/content/scripts/pokerth-prep.sh
-      dest: /tmp/pokerth-prep.sh
-      validate_certs: no
-      force: yes
-
   - name: Ensure a security group for Poker TH servers is in place
     ec2_group:
       name: "{{ ec2_security_group_pokerth }}"
