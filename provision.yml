@@ -60,6 +60,7 @@
   tasks:
   - name: Clear DNF cache
     command: dnf clear all
+    become: yes
   
   - name: Install SNAP
     yum:
