@@ -13,7 +13,7 @@
 
   - name: Ensure a security group for Poker TH servers is in place
     ec2_group:
-      name: "{{ ec2_security_group_tower }}"
+      name: "{{ ec2_security_group_pokerth }}"
       description: Security Group for Ansible Tower servers
       region: "{{ ec2_region }}"
       aws_access_key: "{{ec2_access_key}}"
